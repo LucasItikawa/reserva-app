@@ -1,3 +1,4 @@
+import "react-native-gesture-handler"; // Adicione esta linha no topo do arquivo
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
