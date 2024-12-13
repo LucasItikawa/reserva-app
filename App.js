@@ -5,8 +5,7 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
+import React from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -15,7 +14,7 @@ import {
   Text,
   useColorScheme,
   View,
-} from 'react-native';
+} from "react-native";
 
 import {
   Colors,
@@ -23,14 +22,10 @@ import {
   Header,
   LearnMoreLinks,
   ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+} from "react-native/Libraries/NewAppScreen";
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function Section({ children, title }) {
+  const isDarkMode = useColorScheme() === "dark";
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -39,7 +34,8 @@ function Section({children, title}: SectionProps): React.JSX.Element {
           {
             color: isDarkMode ? Colors.white : Colors.black,
           },
-        ]}>
+        ]}
+      >
         {title}
       </Text>
       <Text
@@ -48,15 +44,16 @@ function Section({children, title}: SectionProps): React.JSX.Element {
           {
             color: isDarkMode ? Colors.light : Colors.dark,
           },
-        ]}>
+        ]}
+      >
         {children}
       </Text>
     </View>
   );
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function App() {
+  const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -65,19 +62,21 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        barStyle={isDarkMode ? "light-content" : "dark-content"}
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+        style={backgroundStyle}
+      >
         <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
+          }}
+        >
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
@@ -103,15 +102,15 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 24,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
-    fontWeight: '400',
+    fontWeight: "400",
   },
   highlight: {
-    fontWeight: '700',
+    fontWeight: "700",
   },
 });
 
